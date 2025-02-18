@@ -10,7 +10,7 @@
 //         email: "joloenja@gmail.com",
 //         password: "94126297"
 //     });
-// }); 
+// });
 
 // app.get("/users")
 
@@ -18,19 +18,19 @@
 //     console.log(`Example app listening at http://localhost:${port}`);
 // });
 
+import express from "express";
+import { postRouter } from "./routes/post-router.js";
+import { useRouter } from "./routes/users-router.js";
 
-import express from 'express';
-import { useRouter } from './routes/users-Router.js';
-import { postRouter } from './routes/ post-router.js';
+const app = express();
+``;
+const port = 3000;
 
-const app = express()
-const port = 3000
+app.use(express.json());
 
-app.use(express.json())
-
-app.use('/', useRouter)
-app.use('/post', postRouter)
+app.use("/", useRouter);
+app.use("/post", postRouter);
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);   
-})
+  console.log(`Example app listening on port ${port}`);
+});
