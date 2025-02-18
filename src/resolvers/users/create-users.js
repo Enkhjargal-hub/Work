@@ -6,9 +6,9 @@ import fs from 'fs';
 export const createUser = (req, res) => {
     const {firstName, secondName } = req.body
     const rawUsersData = fs.readFileSync('src/db/users.json');
-    const user = JSON.parse(rawUsersData)
+    const users = JSON.parse(rawUsersData)
 
-    users.push ({firstName, secondName})
+    users.push({firstName, secondName})
 
     fs.writeFileSync('src/db/users.json', JSON.stringify(users));
 

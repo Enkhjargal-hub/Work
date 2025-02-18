@@ -23,7 +23,6 @@ import { postRouter } from "./routes/post-router.js";
 import { useRouter } from "./routes/users-router.js";
 
 const app = express();
-``;
 const port = 3000;
 
 app.use(express.json());
