@@ -5,3 +5,10 @@ export const getUsers = (req, res) => {
 
   res.send(JSON.parse(users));
 };
+
+
+
+
+
+
+
