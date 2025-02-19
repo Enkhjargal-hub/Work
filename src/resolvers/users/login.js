@@ -1,4 +1,5 @@
 import fs from 'fs';
+import jwt from 'jsonwebtoken';
 
 export const login = (req, res) => {
     const { username, password } = req.body;
@@ -11,6 +12,8 @@ export const login = (req, res) => {
     if (!user) return res.json({message: "Username or Password did not match"})
     if (user.password !==password) return res.json({message: "Username or Password did not match"})
 
+    var token = jwt.sign({foo: 'bar'}, 'jolo')
+
     
-    res.json({token: 'hjkjhnk'}) 
+    res.json({token: token}) 
 }
